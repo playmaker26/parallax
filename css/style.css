@@ -6,206 +6,837 @@ Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 body {
-    line-height:1;
+  line-height: 1;
 }
 
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-    display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 nav ul {
-    list-style:none;
+  list-style: none;
 }
 
-blockquote, q {
-    quotes:none;
+blockquote,
+q {
+  quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 /* change colours to suit your needs */
 ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
 }
 
 /* change colours to suit your needs */
 mark {
-    background-color:#ff9;
-    color:#000;
-    font-style:italic;
-    font-weight:bold;
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
 }
 
 del {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
-abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
 }
 
 table {
-    border-collapse:collapse;
-    border-spacing:0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* change border colour to suit your needs */
 hr {
-    display:block;
-    height:1px;
-    border:0;  
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
-input, select {
-    vertical-align:middle;
+input,
+select {
+  vertical-align: middle;
 }
 
 /*my code*/
 @font-face {
-    font-family: sa;
-    src: url(../fonts/diploma.ttf);
+  font-family: sa;
+  src: url(../fonts/diploma.ttf);
 }
 
 @font-face {
-    font-family: vc;
-    src: url(../fonts/rageitalic.ttf);
+  font-family: vc;
+  src: url(../fonts/rageitalic.ttf);
 }
 
 @font-face {
-    font-family: gta;
-    src: url(../fonts/Pricedown.ttf);
+  font-family: gta;
+  src: url(../fonts/Pricedown.ttf);
 }
 
 * {
-    box-sizing: border-box;
-    font-family: 'DM Sans';
-}
-
-body {
+  box-sizing: border-box;
+  font-family: "DM Sans";
 }
 
 section {
-    width: 100%;
-    min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    background-attachment: fixed;
+  }
+
+  main .main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-}
+    background-image: url(../img/main.png);
+  }
 
-@media only screen and (min-width: 300px) {
-main .gta-3 {
+  main .main .title {
+    background-color: #0092c5;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .main .title h1 {
+    color: #aa1f47;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  main .gta-3,
+  .vice-city,
+  .san-andreas {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  main .gta-3 {
     background-image: url(../img/gta3.png);
-}
+  }
 
-main .gta-3 h2 {
-    padding: 15px 24px;
-    background-color: #fff;
-    color: #111;
-    font-family: Poppins;
-    font-size: 1rem;
-}
+  main .gta-3 article,
+  main .vice-city article main .san-andreas article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-main section article {
-    padding: 15px 24px;
-    background-color: #fff;
-    margin-top: 5%;
-}
+  main .gta-3 article {
+    background-color: #7d4a32;
+    gap: 10px;
+  }
 
-main section article h1 {
-    font-size: 40px;
-    color: #111;
-    margin-bottom: 25px;
-    font-family:gta;
+  main .gta-3 article h1,
+  main .vice-city article h1,
+  main .san-andreas article h1 {
+    color: #f1fcfd;
     text-align: center;
-}
+    font-family: gta;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
 
-main section article p {
-    color: #111;
+  main .gta-3 article p,
+  main .vice-city article p,
+  main .san-andreas article p {
+    color: #f1fcfd;
     font-family: Poppins;
-    font-size: 1rem;
-    line-height: 24px;
-}
+    font-size: 12px;
+    font-style: normal;
+    line-height: 20px;
+  }
 
-main .vice-city {
+  main .vice-city {
     background-image: url(../img/vice-city.png);
-}
+  }
 
-main .vice-city article {
-    margin-top: 60%;
-}
+  main .vice-city article {
+    background-color: #9b1f1f;
+    gap: 3px;
+  }
 
-main .vice-city span {
-    color: #f195ac;
+  main .vice-city article h1 .vc-font {
+    text-shadow: -1.5px 0 #f195ac, 0 1.5px #f195ac, 1.5px 0 #f195ac,
+      0 -1.5px #f195ac;
     text-decoration: underline;
-    font-size: 60px;
+    text-align: center;
     font-family: vc;
-}
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+  }
 
-main .san-andreas {
+  main .san-andreas {
     background-image: url(../img/sa.png);
-}
+  }
 
-main .san-andreas span {
+  main .san-andreas article {
+    background-color: #916445;
+  }
+
+  main .san-andreas article h1 .sa-font {
     color: #000;
-    font-size: 60px;
     font-family: sa;
-}
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 5;
+    line-height: normal;
+    text-shadow: -3px 0 #fff, 0 3px #fff, 3px 0 #fff, 0 -3px #fff;
+  }
 }
 
-@media only screen and (min-width: 700px) {
-    main .vice-city article {
-        margin-top: 25%;
-    }
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    background-attachment: fixed;
+  }
+
+  main .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/main.png);
+  }
+
+  main .main .title {
+    background-color: #0092c5;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .main .title h1 {
+    color: #aa1f47;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  main .gta-3,
+  .vice-city,
+  .san-andreas {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  main .gta-3 {
+    background-image: url(../img/gta3.png);
+  }
+
+  main .gta-3 article,
+  main .vice-city article main .san-andreas article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  main .gta-3 article {
+    background-color: #7d4a32;
+    gap: 10px;
+  }
+
+  main .gta-3 article h1,
+  main .vice-city article h1,
+  main .san-andreas article h1 {
+    color: #f1fcfd;
+    text-align: center;
+    font-family: gta;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
+
+  main .gta-3 article p,
+  main .vice-city article p,
+  main .san-andreas article p {
+    color: #f1fcfd;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 20px;
+  }
+
+  main .vice-city {
+    background-image: url(../img/vice-city.png);
+  }
+
+  main .vice-city article {
+    background-color: #9b1f1f;
+    gap: 3px;
+  }
+
+  main .vice-city article h1 .vc-font {
+    text-shadow: -1.5px 0 #f195ac, 0 1.5px #f195ac, 1.5px 0 #f195ac,
+      0 -1.5px #f195ac;
+    text-decoration: underline;
+    text-align: center;
+    font-family: vc;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+  }
+
+  main .san-andreas {
+    background-image: url(../img/sa.png);
+  }
+
+  main .san-andreas article {
+    background-color: #916445;
+  }
+
+  main .san-andreas article h1 .sa-font {
+    color: #000;
+    font-family: sa;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 5;
+    line-height: normal;
+    text-shadow: -3px 0 #fff, 0 3px #fff, 3px 0 #fff, 0 -3px #fff;
+  }
 }
 
-@media only screen and (min-width: 1000px) {
-    section {
-        background-attachment: fixed;
-    }
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    background-attachment: scroll;
+  }
+
+  main .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/main.png);
+  }
+
+  main .main .title {
+    background-color: #0092c5;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .main .title h1 {
+    color: #aa1f47;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  main .gta-3,
+  .vice-city,
+  .san-andreas {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  main .gta-3 {
+    background-image: url(../img/gta3.png);
+  }
+
+  main .gta-3 article,
+  main .vice-city article main .san-andreas article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  main .gta-3 article {
+    background-color: #7d4a32;
+    gap: 10px;
+  }
+
+  main .gta-3 article h1,
+  main .vice-city article h1,
+  main .san-andreas article h1 {
+    color: #f1fcfd;
+    text-align: center;
+    font-family: gta;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
+
+  main .gta-3 article p,
+  main .vice-city article p,
+  main .san-andreas article p {
+    color: #f1fcfd;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 20px;
+  }
+
+  main .vice-city {
+    background-image: url(../img/vice-city.png);
+  }
+
+  main .vice-city article {
+    background-color: #9b1f1f;
+    gap: 3px;
+  }
+
+  main .vice-city article h1 .vc-font {
+    text-shadow: -1.5px 0 #f195ac, 0 1.5px #f195ac, 1.5px 0 #f195ac,
+      0 -1.5px #f195ac;
+    text-decoration: underline;
+    text-align: center;
+    font-family: vc;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+  }
+
+  main .san-andreas {
+    background-image: url(../img/sa.png);
+  }
+
+  main .san-andreas article {
+    background-color: #916445;
+  }
+
+  main .san-andreas article h1 .sa-font {
+    color: #000;
+    font-family: sa;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 5;
+    line-height: normal;
+    text-shadow: -3px 0 #fff, 0 3px #fff, 3px 0 #fff, 0 -3px #fff;
+  }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    background-attachment: fixed;
+  }
+
+  main .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/main.png);
+  }
+
+  main .main .title {
+    background-color: #0092c5;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .main .title h1 {
+    color: #aa1f47;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  main .gta-3,
+  .vice-city,
+  .san-andreas {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  main .gta-3 {
+    background-image: url(../img/gta3.png);
+  }
+
+  main .gta-3 article,
+  main .vice-city article main .san-andreas article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  main .gta-3 article {
+    background-color: #7d4a32;
+    gap: 10px;
+  }
+
+  main .gta-3 article h1,
+  main .vice-city article h1,
+  main .san-andreas article h1 {
+    color: #f1fcfd;
+    text-align: center;
+    font-family: gta;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
+
+  main .gta-3 article p,
+  main .vice-city article p,
+  main .san-andreas article p {
+    color: #f1fcfd;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 20px;
+  }
+
+  main .vice-city {
+    background-image: url(../img/vice-city.png);
+  }
+
+  main .vice-city article {
+    background-color: #9b1f1f;
+    gap: 3px;
+  }
+
+  main .vice-city article h1 .vc-font {
+    text-shadow: -1.5px 0 #f195ac, 0 1.5px #f195ac, 1.5px 0 #f195ac,
+      0 -1.5px #f195ac;
+    text-decoration: underline;
+    text-align: center;
+    font-family: vc;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+  }
+
+  main .san-andreas {
+    background-image: url(../img/sa.png);
+  }
+
+  main .san-andreas article {
+    background-color: #916445;
+  }
+
+  main .san-andreas article h1 .sa-font {
+    color: #000;
+    font-family: sa;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 5;
+    line-height: normal;
+    text-shadow: -3px 0 #fff, 0 3px #fff, 3px 0 #fff, 0 -3px #fff;
+  }
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    background-attachment: fixed;
+  }
+
+  main .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/main.png);
+  }
+
+  main .main .title {
+    background-color: #0092c5;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .main .title h1 {
+    color: #aa1f47;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  main .gta-3,
+  .vice-city,
+  .san-andreas {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  main .gta-3 {
+    background-image: url(../img/gta3.png);
+  }
+
+  main .gta-3 article,
+  main .vice-city article main .san-andreas article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  main .gta-3 article {
+    background-color: #7d4a32;
+    gap: 10px;
+  }
+
+  main .gta-3 article h1,
+  main .vice-city article h1,
+  main .san-andreas article h1 {
+    color: #f1fcfd;
+    text-align: center;
+    font-family: gta;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
+
+  main .gta-3 article p,
+  main .vice-city article p,
+  main .san-andreas article p {
+    color: #f1fcfd;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 20px;
+  }
+
+  main .vice-city {
+    background-image: url(../img/vice-city.png);
+  }
+
+  main .vice-city article {
+    background-color: #9b1f1f;
+    gap: 3px;
+  }
+
+  main .vice-city article h1 .vc-font {
+    text-shadow: -1.5px 0 #f195ac, 0 1.5px #f195ac, 1.5px 0 #f195ac,
+      0 -1.5px #f195ac;
+    text-decoration: underline;
+    text-align: center;
+    font-family: vc;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+  }
+
+  main .san-andreas {
+    background-image: url(../img/sa.png);
+  }
+
+  main .san-andreas article {
+    background-color: #916445;
+  }
+
+  main .san-andreas article h1 .sa-font {
+    color: #000;
+    font-family: sa;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 5;
+    line-height: normal;
+    text-shadow: -3px 0 #fff, 0 3px #fff, 3px 0 #fff, 0 -3px #fff;
+  }
 }
